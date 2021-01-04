@@ -1,0 +1,24 @@
+plugins {
+    id("java")
+    id("net.java")
+    id("io.spring.dependency-management") version("1.0.10.RELEASE")
+    id("org.springframework.boot") version("2.3.7.RELEASE")
+    id("net.boot")
+}
+
+dependencies {
+    implementation(project(":core"))
+
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // swagger
+    implementation("io.springfox:springfox-boot-starter:3.0.0")
+    implementation("io.springfox:springfox-swagger-ui:3.0.0")
+    implementation("io.swagger:swagger-annotations:1.6.2")
+
+    testImplementation(libraries.test)
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.rest-assured:rest-assured:4.2.0")
+    testImplementation("io.rest-assured:json-path:4.2.0")
+    testImplementation("io.rest-assured:xml-path:4.2.0")
+}
